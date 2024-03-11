@@ -2736,7 +2736,7 @@
 								}
 							}
 						},
-						"url": "{{BaseUrl}}/batches/{{batchId}}"
+						"url": "{{baseUrl}}/batches/{{batchId}}"
 					},
 					"response": []
 				},
@@ -2795,7 +2795,7 @@
 								}
 							}
 						},
-						"url": "{{BaseUrl}}/batches/{{batchId}}"
+						"url": "{{baseUrl}}/batches/{{batchId}}"
 					},
 					"response": []
 				},
@@ -2855,7 +2855,7 @@
 								}
 							}
 						},
-						"url": "{{BaseUrl}}/batches/{{batchId}}"
+						"url": "{{baseUrl}}/batches/{{batchId}}"
 					},
 					"response": []
 				},
