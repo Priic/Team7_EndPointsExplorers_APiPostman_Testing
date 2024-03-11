@@ -318,7 +318,7 @@
 							"script": {
 								"id": "7c0f246b-1807-4004-a33c-b9941aeb07a1",
 								"exec": [
-									"const serialNumber = _.random(50,55)",
+									"const serialNumber = _.random(70,75)",
 									"pm.variables.set(\"serialNumber\", serialNumber )"
 								],
 								"type": "text/javascript"
@@ -1262,7 +1262,7 @@
 							"script": {
 								"id": "7c0f246b-1807-4004-a33c-b9941aeb07a1",
 								"exec": [
-									"const serialNumber = _.random(56,60)",
+									"const serialNumber = _.random(80,70)",
 									"pm.variables.set(\"serialNumber\", serialNumber )"
 								],
 								"type": "text/javascript"
@@ -1291,7 +1291,7 @@
 								}
 							}
 						},
-						"url": "{{baseUrl}}/{{createNewProgram}}"
+						"url": "{{baseUrl}}/saveprogram"
 					},
 					"response": []
 				},
@@ -1384,7 +1384,7 @@
 							"script": {
 								"id": "7c0f246b-1807-4004-a33c-b9941aeb07a1",
 								"exec": [
-									"const serialNumber = _.random(60,65)",
+									"const serialNumber = _.random(90,95)",
 									"pm.variables.set(\"serialNumber\", serialNumber )"
 								],
 								"type": "text/javascript"
@@ -1413,7 +1413,7 @@
 								}
 							}
 						},
-						"url": "{{baseUrl}}/{{createNewProgram}}"
+						"url": "{{baseUrl}}/saveprogram"
 					},
 					"response": []
 				},
