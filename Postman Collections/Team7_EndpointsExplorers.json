@@ -4,5 +4,3485 @@
 		"name": "Team7_EndPoints_Explorers_API_POSTMAN_Hackathon",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
-	"item": []
+	"item": [
+		{
+			"name": "UserLoginModule",
+			"item": [
+				{
+					"name": "Invalid  Email Id Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "15f6ea7e-f9a9-402b-b436-df2606f3dbf6",
+								"exec": [
+									"pm.test(\"Status code is 401 : Invalid Email Id\", function () {\r",
+									"    pm.expect(pm.response.code).to.eql(401);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "528051af-7bc8-4510-90ad-5bf264d0ba18",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"password\": \"{{Invalidpassword}}\",\r\n  \"userLoginEmailId\": \"{{userLoginEmailId}}\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid Password Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "10edc0a2-c10f-4cb0-b43b-8f02d90e5905",
+								"exec": [
+									"pm.test(\"Status code is 401 : Invalid Password\", function () {\r",
+									"    pm.expect(pm.response.code).to.eql(401);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "c71883ac-0f19-471f-8e60-0162b4cb2057",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"password\": \"{{password}}\",\r\n  \"userLoginEmailId\": \"{{InvaliduserLoginEmailId}}\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Blank Email Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "995f6718-9c16-4153-8758-428da33c1c5a",
+								"exec": [
+									" pm.test(\"Status code is 400 :Bad request : password are mandatory\", function () {\r",
+									"    pm.expect(pm.response.code).to.eql(400);\r",
+									"    });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "90063d4c-abbe-487c-b2f7-f9d54818d193",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"password\": \"\",\r\n  \"userLoginEmailId\": \"{{userLoginEmailId}}\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Blank password Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "18c4de37-d82a-4f9a-8ec6-5702cddb9da6",
+								"exec": [
+									" pm.test(\"Status code is 400 :Bad request : passwrod is mandatory\", function () {\r",
+									"    pm.expect(pm.response.code).to.eql(400);\r",
+									"    });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "e7cbac21-fd6a-474f-b41f-b7a1a4f2c9e9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"password\": \"{{password}}\",\r\n  \"userLoginEmailId\": \"\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Blank Email and Blank  password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "fdb9ad2b-f71e-4aed-a197-d91dfa90d378",
+								"exec": [
+									"    pm.test(\"Status code is 400 :Bad request : Email and password mandatory\", function () {\r",
+									"    pm.expect(pm.response.code).to.eql(400);\r",
+									"    });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "bf5f9a33-c008-4686-a86b-2b274872e218",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"password\": \"\",\r\n  \"userLoginEmailId\": \"\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/login"
+					},
+					"response": []
+				},
+				{
+					"name": "User SignIn to LMS application",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4ab74918-e9eb-4882-892c-e6fc13fd98c6",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Active\");\r",
+									"});\r",
+									"\r",
+									"const jsonData=JSON.parse(responseBody)\r",
+									"pm.collectionVariables.set(\"BearerToken\", jsonData.token);\r",
+									"\r",
+									"//set Response Schema variable \r",
+									"var schema = {\r",
+									"  \"type\": \"object\",\r",
+									"  \"properties\": {\r",
+									"    \"email\": { \"type\": \"string\" },\r",
+									"    \"roles\": {\r",
+									"      \"type\": \"array\",\r",
+									"      \"items\": { \"type\": \"string\" }\r",
+									"    },\r",
+									"    \"status\": { \"type\": \"string\" },\r",
+									"    \"token\": { \"type\": \"string\" },\r",
+									"    \"type\": { \"type\": \"string\" },\r",
+									"    \"userId\": { \"type\": \"string\" }\r",
+									"  },\r",
+									"  \"required\": [\"email\", \"roles\", \"status\", \"token\", \"type\", \"userId\"]\r",
+									"};\r",
+									"     \r",
+									"    \r",
+									"  \r",
+									"pm.test('Schema validation', () => {\r",
+									"  pm.response.to.have.jsonSchema (schema);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "599f9167-d300-48cc-a20b-593ac4074768",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n  \"password\": \"{{passwordExcel}}\",\r\n  \"userLoginEmailId\": \"{{userLoginEmailIdExcel}}\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/login"
+					},
+					"response": []
+				}
+			],
+			"id": "c5c85c88-fd78-4961-98a4-c4d54fcc58f1"
+		},
+		{
+			"name": "ProgramModule",
+			"item": [
+				{
+					"name": "Create New Program",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9b6f5444-b9ea-48af-ab54-e9ccf272e7ff",
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"pm.collectionVariables.set(\"programName\",jsonData.programName);",
+									"pm.collectionVariables.set(\"programDescription\", jsonData.programDescription);",
+									"pm.collectionVariables.set(\"programStatus\", jsonData.programStatus);",
+									"pm.collectionVariables.set(\"programId\", jsonData.programId);",
+									"pm.collectionVariables.set(\"creationTime\", jsonData.creationTime);",
+									"pm.collectionVariables.set(\"lastModTime\", jsonData.lastModTime);",
+									"",
+									"",
+									"var jsonResponse = pm.response.json();",
+									"var schema = {",
+									"  \"type\": \"object\",",
+									"  \"properties\": {",
+									"    \"programId\": { \"type\": \"integer\" },",
+									"    \"programName\": { \"type\": \"string\" },",
+									"    \"programDescription\": { \"type\": \"string\" },",
+									"    \"programStatus\": { \"type\": \"string\" },",
+									"    \"creationTime\": { \"type\": \"string\", \"format\": \"date-time\" },",
+									"    \"lastModTime\": { \"type\": \"string\", \"format\": \"date-time\" }",
+									"  },",
+									"  \"required\": [\"programId\", \"programName\", \"programDescription\", \"programStatus\", \"creationTime\", \"lastModTime\"]",
+									"};",
+									"",
+									"pm.test('Schema validation', () => {",
+									"  pm.response.to.have.jsonSchema (schema);",
+									"});",
+									"",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "7c0f246b-1807-4004-a33c-b9941aeb07a1",
+								"exec": [
+									"const serialNumber = _.random(50,55)",
+									"pm.variables.set(\"serialNumber\", serialNumber )"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "3a94e566-3445-43dd-858f-8c2d114e1850",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"programDescription\": \"{{programDescription_TestFile}}\",\n  \"programName\": \"{{createprogramName}}{{serialNumber}}\",\n  \"programStatus\": \"{{createprogramStatus}}\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/{{createNewProgram}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Program for existing program",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9b6f5444-b9ea-48af-ab54-e9ccf272e7ff",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "7c0f246b-1807-4004-a33c-b9941aeb07a1",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "a99dba9d-f41c-47f7-8829-32ccfcab57b6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"programDescription\": \"{{programDescription}}\",\n  \"programName\": \"{{programName}}\",\n  \"programStatus\": \"{{programStatus}}\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/{{createNewProgram}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Program with Invalid Program Description",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "55952057-7561-4db4-af23-51fbcfa64cf8",
+								"exec": [
+									"pm.test(\"Not a Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([400]);",
+									"    });",
+									"",
+									"",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"var jsonData = JSON.parse(responseBody);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "3ecd45db-abd4-4e75-99dd-2a199025b6de",
+								"exec": [
+									"const serialNumber = _.random(0,5)",
+									"pm.variables.set(\"serialNumber\", serialNumber )"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "94c1ecb9-42cf-454e-acf4-993d8ad65578",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"programDescription\": \"{{programDescriptionNegative}}\",\n  \"programName\": \"{{programName}}{{serialNumber}}\",\n  \"programStatus\": \"{{programStatus}}\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/{{createNewProgram}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Program with Invalid Program Name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "887ab81b-e3f8-40ed-a156-67b571f8ca23",
+								"exec": [
+									"pm.test(\"Not a Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([400]);",
+									"});",
+									"",
+									"var jsonData = JSON.parse(responseBody);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "300ba356-7dd1-4b71-9e2c-5168bf702837",
+								"exec": [
+									"const serialNumber = _.random(0,5)",
+									"pm.variables.set(\"serialNumber\", serialNumber )"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "b5c46d77-c6f8-441a-89bd-be3d2b1531ce",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"programDescription\": \"{{programDescription}}\",\n  \"programName\": \"{{programNameNegative}}\",\n  \"programStatus\": \"{{programStatus}}\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/{{createNewProgram}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Proagram with Invalid Program Status",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "907f6629-a3f1-4bfa-bfaf-e23ed77e1dfa",
+								"exec": [
+									"pm.test(\"Not a Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([400]);",
+									"});",
+									"",
+									"var jsonData = JSON.parse(responseBody);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "674c0063-185f-4b79-8716-e7494a815632",
+								"exec": [
+									"const serialNumber = _.random(0,5)",
+									"pm.variables.set(\"serialNumber\", serialNumber )"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "28bd33da-523a-4090-854f-f8cf6125c93f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"programDescription\": \"{{programDescription}}\",\n  \"programName\": \"{{programName}}{{serialNumber}}\",\n  \"programStatus\": \"{{programStatusNegative}}\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/{{createNewProgram}}"
+					},
+					"response": []
+				},
+				{
+					"name": "All Programs",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "68224db6-0868-41cb-b4d2-ecd53aade614",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "7cfc0124-2827-4ed0-b150-8a6e93f700d0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/{{getAllPrograms}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Program By ProgramID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5b878373-4aef-4041-9718-aab60103f251",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "e91832df-8c6b-44d9-8a9c-47a910e076c8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/{{getProgramByProgramId}}/{{programId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Program By non-exsting ProgramID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5b878373-4aef-4041-9718-aab60103f251",
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {",
+									"    pm.response.to.have.status(404);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "e82fca90-03c5-4376-980b-33f6618faab8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/{{getProgramByProgramId}}/{{NonExistProgramId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "All Program with Users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "246424eb-c039-403d-80bc-dd07d357e141",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "70cc3ca9-b80b-421a-b787-3ecd1a740edb",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/{{getAllProgramsWithUsers}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Program By Program ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3194ff86-a6ac-4879-91c1-5eae13d246ac",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"   \r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"var jsonData = JSON.parse(responseBody);\r",
+									" //pm.environment.set(\"programId\", jsonData.programId);\r",
+									" pm.collectionVariables.set(\"programName\",jsonData.programName);\r",
+									"pm.collectionVariables.set(\"programDescription\", jsonData.programDescription);\r",
+									"pm.collectionVariables.set(\"programStatus\", jsonData.programStatus);\r",
+									"pm.collectionVariables.set(\"programId\", jsonData.programId);\r",
+									"pm.collectionVariables.set(\"creationTime\", jsonData.creationTime);\r",
+									"pm.collectionVariables.set(\"lastModTime\", jsonData.lastModTime);\r",
+									"\r",
+									"\r",
+									"\r",
+									"var schema = {\r",
+									"  \"type\": \"object\",\r",
+									"  \"properties\": {\r",
+									"    \"programId\": { \"type\": \"integer\" },\r",
+									"    \"programName\": { \"type\": \"string\" },\r",
+									"    \"programDescription\": { \"type\": \"string\" },\r",
+									"    \"programStatus\": { \"type\": \"string\" },\r",
+									"    \"creationTime\": { \"type\": \"string\", \"format\": \"date-time\" },\r",
+									"    \"lastModTime\": { \"type\": \"string\", \"format\": \"date-time\" }\r",
+									"  },\r",
+									"  \"required\": [\"programId\", \"programName\", \"programDescription\", \"programStatus\", \"creationTime\", \"lastModTime\"]\r",
+									"};\r",
+									"\r",
+									"pm.test('Schema validation', () => {\r",
+									"  pm.response.to.have.jsonSchema (schema);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "d7824397-0cf3-4094-b0f0-25915e139f41",
+								"exec": [
+									"// const serialNumber = _.random(400,1000)\r",
+									"// pm.variables.set(\"serialNumber\", serialNumber )"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "e0ec71e5-3d88-4297-8256-5035deb7b5a8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n\"programDescription\": \"{{IDprogramDescription}}\",\r\n\"programName\": \"{{programName}}\",\r\n\"programStatus\": \"{{programStatus}}\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/putprogram/{{programId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Program By ID with Empty Program Name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6d962eef-6928-49f3-8bf3-cf903935e771",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"   \r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "3efa700a-34e8-4594-88e5-357ed00cfdbb",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n\"programDescription\": \"{{IDprogramDescription}}\",\r\n\"programName\": \"{{IDEmptyprogramName}}\",\r\n\"programStatus\": \"{{programStatus}}\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/putprogram/{{programId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Program By ID  for non-existing program",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6d962eef-6928-49f3-8bf3-cf903935e771",
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									" \r",
+									"});\r",
+									"var jsonData = JSON.parse(responseBody);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "39cf6bdd-fd5c-49eb-9c92-3cedeb041991",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n\"programDescription\": \"{{IDprogramDescription}}\",\r\n\"programName\": \"{{programName}}\",\r\n\"programStatus\": \"{{programStatus}}\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/putprogram/{{NonExistProgramId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Program By ID With Empty Program Status",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "fac30e71-8340-42f5-8b28-ef4aabf8f9d8",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"   \r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "16466f68-433d-4933-a67c-a7a976ba5222",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n\"programDescription\": \"{{IDprogramDescription}}\",\r\n\"programName\": \"{{programName}}\",\r\n\"programStatus\": \"{{IDEmptyprogramStatus}}\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/putprogram/{{programId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Program description By Program Name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "fac2e161-711d-4194-82ee-e01572b5f692",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"   \r",
+									"\r",
+									"});\r",
+									"var jsonData = JSON.parse(responseBody);\r",
+									" \r",
+									"pm.collectionVariables.set(\"programName\",jsonData.programName);\r",
+									"pm.collectionVariables.set(\"programDescription\", jsonData.programDescription);\r",
+									"pm.collectionVariables.set(\"programStatus\", jsonData.programStatus);\r",
+									"pm.collectionVariables.set(\"programId\", jsonData.programId);\r",
+									"pm.collectionVariables.set(\"creationTime\", jsonData.creationTime);\r",
+									"pm.collectionVariables.set(\"lastModTime\", jsonData.lastModTime);\r",
+									"\r",
+									"//pm.test(\"verify program name \",function()\r",
+									"//{\r",
+									"// const response=pm.response.json();\r",
+									"// pm.expect(response.json.programName).to.eql(pm.iterationData.get(\"programName\"));\r",
+									"\r",
+									"// });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "07c43cc0-812d-4dcc-a69c-50e95d21ec06",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"programDescription\": \"{{NameprogramDescription}}\",\r\n\"programName\": \"{{programName}}\",\r\n\"programStatus\": \"{{programStatus}}\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/program/{{programName}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Program By Name  for non-existing program",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6d962eef-6928-49f3-8bf3-cf903935e771",
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									" \r",
+									"});\r",
+									"var jsonData = JSON.parse(responseBody);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "8e931c1b-8e08-4553-b332-d00021007f16",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n\"programDescription\": \"{{NameprogramDescription}}\",\r\n\"programName\": \"{{NonExistProgramName}}\",\r\n\"programStatus\": \"{{programStatus}}\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/putprogram/{{NonExistProgramName}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Program By Name with Empty Program Name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "667fb60b-abde-41b5-a4c5-26917bd1e01e",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"   \r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "798fa26f-b964-499a-8b09-d946a57cafb9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"programDescription\": \"{{programDescription}}\",\r\n\"programName\": \"{{IDEmptyprogramName}}\",\r\n\"programStatus\": \"{{programStatus}}\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/program/{{programName}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Program By Name With Empty Pogram Status",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0eb53dd8-916f-4cd8-9343-b98c0d939275",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"   \r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "1e15b4d1-bcc5-4c92-92ed-4bfe19bcd3bd",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n\"programDescription\": \"{{programDescription}}\",\r\n\"programName\": \"{{programName}}\",\r\n\"programStatus\": \"{{IDEmptyprogramStatus}}\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/program/{{programName}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Program With Program ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "49d737a3-cc05-4a40-b9be-5ce01ca8c5fa",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"   \r",
+									"   \r",
+									"\r",
+									"});\r",
+									"const response=pm.response.text();    \r",
+									"pm.test(\"Program deleted successfully\",()=>{\r",
+									"    pm.expect(response).to.eql(\"Message: Program Id-\"+pm.collectionVariables.get(\"programId\")+\" is deleted Successfully!\")\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "b1f2a39a-5f8e-464f-bc78-64e180dd9152",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseUrl}}/deletebyprogid/{{programId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Program With inactive Program Name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5c86255a-4b65-486e-9bb1-ffc2260944e9",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"   \r",
+									"\r",
+									"});\r",
+									"const response=pm.response.text();    \r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "0e80f495-24b5-4b5f-b920-29ab725d7d0d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseUrl}}/deletebyprogid/{{programId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Second Program",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9b6f5444-b9ea-48af-ab54-e9ccf272e7ff",
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);",
+									"});",
+									"",
+									"var jsonData = JSON.parse(responseBody);",
+									"pm.collectionVariables.set(\"programName\",jsonData.programName);",
+									"pm.collectionVariables.set(\"programDescription\", jsonData.programDescription);",
+									"pm.collectionVariables.set(\"programStatus\", jsonData.programStatus);",
+									"pm.collectionVariables.set(\"programId\", jsonData.programId);",
+									"pm.collectionVariables.set(\"creationTime\", jsonData.creationTime);",
+									"pm.collectionVariables.set(\"lastModTime\", jsonData.lastModTime);",
+									"pm.collectionVariables.set(\"InActiveProgramId\", jsonData.programId);",
+									"",
+									"var jsonResponse = pm.response.json();",
+									"var schema = {",
+									"  \"type\": \"object\",",
+									"  \"properties\": {",
+									"    \"programId\": { \"type\": \"integer\" },",
+									"    \"programName\": { \"type\": \"string\" },",
+									"    \"programDescription\": { \"type\": \"string\" },",
+									"    \"programStatus\": { \"type\": \"string\" },",
+									"    \"creationTime\": { \"type\": \"string\", \"format\": \"date-time\" },",
+									"    \"lastModTime\": { \"type\": \"string\", \"format\": \"date-time\" }",
+									"  },",
+									"  \"required\": [\"programId\", \"programName\", \"programDescription\", \"programStatus\", \"creationTime\", \"lastModTime\"]",
+									"};",
+									"",
+									"pm.test('Schema validation', () => {",
+									"  pm.response.to.have.jsonSchema (schema);",
+									"});",
+									"",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "7c0f246b-1807-4004-a33c-b9941aeb07a1",
+								"exec": [
+									"const serialNumber = _.random(56,60)",
+									"pm.variables.set(\"serialNumber\", serialNumber )"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "959f29e3-e50d-4cd3-93dd-adca19b5fe3e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"programDescription\": \"{{programDescription_TestFile}}\",\n  \"programName\": \"{{createprogramName}}{{serialNumber}}\",\n  \"programStatus\": \"{{createprogramStatus}}\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/{{createNewProgram}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Program With  Program Name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5c86255a-4b65-486e-9bb1-ffc2260944e9",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"   \r",
+									"\r",
+									"});\r",
+									"const response=pm.response.text();    \r",
+									"pm.test(\"Program deleted successfully\",()=>{\r",
+									"    pm.expect(response).to.eql(\"Message: Program Name -\"+pm.collectionVariables.get(\"programName\")+\" is deleted Successfully!\")\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "9fd0779e-3648-4383-a3cd-7951c7cb60cc",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseUrl}}/deletebyprogname/{{programName}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Program",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9b6f5444-b9ea-48af-ab54-e9ccf272e7ff",
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);",
+									"});",
+									"",
+									"var jsonData = JSON.parse(responseBody);",
+									"pm.collectionVariables.set(\"programName\",jsonData.programName);",
+									"pm.collectionVariables.set(\"programDescription\", jsonData.programDescription);",
+									"pm.collectionVariables.set(\"programStatus\", jsonData.programStatus);",
+									"pm.collectionVariables.set(\"programId\", jsonData.programId);",
+									"pm.collectionVariables.set(\"creationTime\", jsonData.creationTime);",
+									"pm.collectionVariables.set(\"lastModTime\", jsonData.lastModTime);",
+									"",
+									"var jsonResponse = pm.response.json();",
+									"var schema = {",
+									"  \"type\": \"object\",",
+									"  \"properties\": {",
+									"    \"programId\": { \"type\": \"integer\" },",
+									"    \"programName\": { \"type\": \"string\" },",
+									"    \"programDescription\": { \"type\": \"string\" },",
+									"    \"programStatus\": { \"type\": \"string\" },",
+									"    \"creationTime\": { \"type\": \"string\", \"format\": \"date-time\" },",
+									"    \"lastModTime\": { \"type\": \"string\", \"format\": \"date-time\" }",
+									"  },",
+									"  \"required\": [\"programId\", \"programName\", \"programDescription\", \"programStatus\", \"creationTime\", \"lastModTime\"]",
+									"};",
+									"",
+									"pm.test('Schema validation', () => {",
+									"  pm.response.to.have.jsonSchema (schema);",
+									"});",
+									"",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "7c0f246b-1807-4004-a33c-b9941aeb07a1",
+								"exec": [
+									"const serialNumber = _.random(60,65)",
+									"pm.variables.set(\"serialNumber\", serialNumber )"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "c4925d08-c245-4412-914a-ab5cce87e14c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"programDescription\": \"{{programDescription_TestFile}}\",\n  \"programName\": \"{{createprogramName}}{{serialNumber}}\",\n  \"programStatus\": \"{{createprogramStatus}}\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/{{createNewProgram}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Program By ProgramID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5b878373-4aef-4041-9718-aab60103f251",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "e93a65b7-71a4-4fb3-b6a0-df61b12f787d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/{{getProgramByProgramId}}/{{programId}}"
+					},
+					"response": []
+				}
+			],
+			"id": "9b6bb715-7d29-4cbf-8f6e-cd70d1d0bffc"
+		},
+		{
+			"name": "ProgramBatchModule",
+			"item": [
+				{
+					"name": "Create a new Batch for the Program",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "cc6a8ab0-0558-4b34-9de9-48ffa869543e",
+								"exec": [
+									"const serialNumber = _.random(20,25)\r",
+									"pm.variables.set(\"serialNumber\", serialNumber )"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "f7ca5984-998d-4e0f-85cf-202bfb89c507",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"pm.test(\"Successful POST request\", function () {\r",
+									"      pm.response.to.have.status(201);\r",
+									"});\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201,202]);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									" \r",
+									"const jsonData=JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"batchName\", jsonData.batchName)\r",
+									" pm.collectionVariables.set(\"batchDescription\", jsonData.batchDescription);\r",
+									" pm.collectionVariables.set(\"batchNoOfClasses\", jsonData.batchNoOfClasses);\r",
+									" pm.collectionVariables.set(\"batchStatus\", jsonData.batchStatus);\r",
+									"pm.collectionVariables.set(\"programId\", jsonData.programId);\r",
+									"pm.collectionVariables.set(\"batchId\", jsonData.batchId);\r",
+									"pm.collectionVariables.set(\"InactiveBatchId\", jsonData.batchId);\r",
+									"pm.collectionVariables.set(\"InActiveBatchName\", jsonData.batchName);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "a08534c6-3e9a-400b-917f-4e308d8b5e8d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"batchDescription\": \"{{batchDescriptionExcel}}\",\r\n  \"batchName\": \"{{batchNameExcel}}\",\r\n  \"batchNoOfClasses\": {{batchNoOfClassesExcel}},\r\n  \"batchStatus\": \"{{batchStatusExcel}}\",\r\n  \"programId\": {{programId}}\r\n }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/batches"
+					},
+					"response": []
+				},
+				{
+					"name": "Create a new Batch with existing Program and  batchName-Invalid 400 status code",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "cc6a8ab0-0558-4b34-9de9-48ffa869543e",
+								"exec": [
+									"//const serialNumber = _.random(0,5)\r",
+									"//pm.variables.set(\"serialNumber\", serialNumber )"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "f7ca5984-998d-4e0f-85cf-202bfb89c507",
+								"exec": [
+									"pm.test(\"Status code is 400 \", function () {\r",
+									"     pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"   \r",
+									"\r",
+									"const jsonData=JSON.parse(responseBody);\r",
+									"// pm.collectionVariables.set(\"batchName\", jsonData.batchName)\r",
+									"//  pm.collectionVariables.set(\"batchName\", jsonData.batchName);\r",
+									"//  pm.collectionVariables.set(\"batchNoOfClasses\", jsonData.batchNoOfClasses);\r",
+									"//  pm.collectionVariables.set(\"batchStatus\", jsonData.batchStatus);\r",
+									"// pm.collectionVariables.set(\"programId\", jsonData.programId);\r",
+									"// pm.collectionVariables.set(\"batchId\", jsonData.batchId);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "199f26d8-46d2-4e5b-8713-2932d7347015",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"batchDescription\": \"{{batchDescription}}\",\r\n  \"batchName\": \"{{batchName}}\",\r\n  \"batchNoOfClasses\": {{batchNoOfClasses}},\r\n  \"batchStatus\": \"{{batchStatus}}\",\r\n  \"programId\": {{programId}}\r\n }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/batches"
+					},
+					"response": []
+				},
+				{
+					"name": "Create a new Batch for the Program with missing BatchName-Invalid",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "cc6a8ab0-0558-4b34-9de9-48ffa869543e",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "f7ca5984-998d-4e0f-85cf-202bfb89c507",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"    \r",
+									"\r",
+									"const jsonData=JSON.parse(responseBody);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "c4b886e7-09df-4767-bc54-2646f417cd7a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"batchDescription\": \"{{batchDescription}}\",\r\n  \"batchName\": \"\",\r\n  \"batchNoOfClasses\": {{batchNoOfClasses}},\r\n  \"batchStatus\": \"{{batchStatus}}\",\r\n  \"programId\": {{programId}}\r\n }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/batches"
+					},
+					"response": []
+				},
+				{
+					"name": "Create a new Batch for the Program with missing Batch Number Of Classes-invalid",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "cc6a8ab0-0558-4b34-9de9-48ffa869543e",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "f7ca5984-998d-4e0f-85cf-202bfb89c507",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "8e6ca8f1-4dd1-4d3f-8a3b-a31628fecc9d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"batchDescription\": \"{{batchDescription}}\",\r\n  \"batchName\": \"{{batchName}}\",\r\n  \"batchNoOfClasses\": {{missingbatchNumber}},\r\n  \"batchStatus\": \"{{batchStatus}}\",\r\n  \"programId\": {{programId}}\r\n }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/batches"
+					},
+					"response": []
+				},
+				{
+					"name": "Create a new Batch for the Program with  Batch Number Of Classes  as alphanumeric-invalid Copy",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "cc6a8ab0-0558-4b34-9de9-48ffa869543e",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "f7ca5984-998d-4e0f-85cf-202bfb89c507",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "4427cc96-6157-4710-986d-ede36dc3b3a2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"batchDescription\": \"{{batchDescription}}\",\r\n  \"batchName\": \"{{batchName}}\",\r\n  \"batchNoOfClasses\": \"10q\",\r\n  \"batchStatus\": \"{{batchStatus}}\",\r\n  \"programId\": {{programId}}\r\n }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/batches"
+					},
+					"response": []
+				},
+				{
+					"name": "Create a new Batch for the Program with missing BatchStatus code-invalid",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "cc6a8ab0-0558-4b34-9de9-48ffa869543e",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "f7ca5984-998d-4e0f-85cf-202bfb89c507",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "2548ca9f-ca93-4255-9070-785d3d52e0fa",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"batchDescription\": \"{{batchDescription}}\",\r\n  \"batchName\": \"{{batchName}}\",\r\n  \"batchNoOfClasses\": {{batchNoOfClasses}},\r\n  \"batchStatus\": \"\",\r\n  \"programId\": {{programId}}\r\n }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/batches"
+					},
+					"response": []
+				},
+				{
+					"name": "Create a new Batch for the Program with missing ProgramId-Invalid",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "cc6a8ab0-0558-4b34-9de9-48ffa869543e",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "f7ca5984-998d-4e0f-85cf-202bfb89c507",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "120816da-eced-4bcf-8871-d92ceecfb799",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"batchDescription\": \"{{batchDescription}}\",\r\n  \"batchName\": \"{{batchName}}\",\r\n  \"batchNoOfClasses\": {{batchNoOfClasses}},\r\n  \"batchStatus\": \"{{batchStatus}}\",\r\n  \"programId\": \"\"\r\n }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/batches"
+					},
+					"response": []
+				},
+				{
+					"name": "Create a new Batch for the Program with invalid EndPoint-Invalid",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "cc6a8ab0-0558-4b34-9de9-48ffa869543e",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "f7ca5984-998d-4e0f-85cf-202bfb89c507",
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "ed9a3d18-ba30-4f38-b02d-8362aadc0b71",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"batchDescription\": \"{{batchDescription}}\",\r\n  \"batchName\": \"{{batchName}}\",\r\n  \"batchNoOfClasses\": {{batchNoOfClasses}},\r\n  \"batchStatus\": \"{{batchStatus}}\",\r\n  \"programId\": {{programId}}\r\n }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/batchesand"
+					},
+					"response": []
+				},
+				{
+					"name": "Create a new Batch for the Program with Inactive ProgramID-Invalid",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "cc6a8ab0-0558-4b34-9de9-48ffa869543e",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "f7ca5984-998d-4e0f-85cf-202bfb89c507",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "84665ace-4ed4-47f8-a493-9f5756959827",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"batchDescription\": \"{{batchDescription}}\",\r\n  \"batchName\": \"{{batchName}}\",\r\n  \"batchNoOfClasses\": {{batchNoOfClasses}},\r\n  \"batchStatus\": \"{{batchStatus}}\",\r\n  \"programId\": {{InActiveProgramId}}\r\n }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/batches"
+					},
+					"response": []
+				},
+				{
+					"name": "View All Batches",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "237bff18-7823-499f-a89e-d3127a5c5897",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "d93a562b-9b1e-44bd-8306-c809adce7ab5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/batches"
+					},
+					"response": []
+				},
+				{
+					"name": "View Batch by valid BatchID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "84039679-2f72-47cd-8af9-3c4ab005f7e9",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "f2b7dd9d-5496-41c2-87bc-c193507ac795",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/batches/batchId/{{batchId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "View Batch by valid  BatchName",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "84039679-2f72-47cd-8af9-3c4ab005f7e9",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "0d1e1752-3813-4989-a2d0-1d30a53d5c4e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/batches/batchName/{{batchName}}"
+					},
+					"response": []
+				},
+				{
+					"name": "View Batch by valid  ProgramID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "84039679-2f72-47cd-8af9-3c4ab005f7e9",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "6adb8069-ba00-4550-9d54-e70196c2f5f9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/batches/program/{{programId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "View Batch by Inactive  Program",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "84039679-2f72-47cd-8af9-3c4ab005f7e9",
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "7380eff3-deff-47dc-8f80-3f7229d2f0e3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/batches/program/{{InActiveProgramId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "View Batch by non-existing BatchID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "84039679-2f72-47cd-8af9-3c4ab005f7e9",
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "3ea8a791-2eb6-4519-80cd-07bbceaae5a9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/batches/batchId/{{nonExistngBatchId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "View Batch by non-existing BatchName",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "84039679-2f72-47cd-8af9-3c4ab005f7e9",
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "9cd22d9b-3aa6-4930-bce3-9996fa553587",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{BaseUrl}}/batches/batchName/{{NonExistngBatchName}}"
+					},
+					"response": []
+				},
+				{
+					"name": "View Batch by non-existing ProgramID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "84039679-2f72-47cd-8af9-3c4ab005f7e9",
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "2c709a3d-c277-45ba-9bf5-bf45af8590a4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/batches/program/{{NonExistProgramId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Update a Batch with Batch descriptions by valid BATCH ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "81c8ab57-f4fb-487a-b675-e7e50f1f607e",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"const jsonData=JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"batchName\", jsonData.batchName)\r",
+									"pm.collectionVariables.set(\"batchDescription\", jsonData.batchDescription);\r",
+									"pm.collectionVariables.set(\"batchNoOfClasses\", jsonData.batchNoOfClasses);\r",
+									"pm.collectionVariables.set(\"batchStatus\", jsonData.batchStatus);\r",
+									"pm.collectionVariables.set(\"programId\", jsonData.programId);\r",
+									"pm.collectionVariables.set(\"programName\", jsonData.programName);\r",
+									"pm.collectionVariables.set(\"batchId\", jsonData.batchId);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "9eea0312-82e8-4ebf-9a5f-990fa714f4d6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"batchDescription\": \"{{UpdatebatchDescription}}\",\r\n  \"batchId\": {{batchId}},\r\n  \"batchName\": \"{{batchName}}\",\r\n  \"batchNoOfClasses\": {{batchNoOfClasses}},\r\n  \"batchStatus\": \"{{batchStatus}}\",\r\n  \"programId\": {{programId}},\r\n  \"programName\": \"{{programName}}\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/batches/{{batchId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Update a Batch with Batch Number Of classes  by valid BATCH ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "81c8ab57-f4fb-487a-b675-e7e50f1f607e",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"const jsonData=JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"batchName\", jsonData.batchName)\r",
+									"pm.collectionVariables.set(\"batchDescription\", jsonData.batchDescription);\r",
+									"pm.collectionVariables.set(\"batchNoOfClasses\", jsonData.batchNoOfClasses);\r",
+									"pm.collectionVariables.set(\"batchStatus\", jsonData.batchStatus);\r",
+									"pm.collectionVariables.set(\"programId\", jsonData.programId);\r",
+									"pm.collectionVariables.set(\"programName\", jsonData.programName);\r",
+									"pm.collectionVariables.set(\"batchId\", jsonData.batchId);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "4a604b1c-16c4-4c3c-a8c9-a8c0ab2e5eeb",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"batchDescription\": \"{{batchDescription}}\",\r\n  \"batchId\": {{batchId}},\r\n  \"batchName\": \"{{batchName}}\",\r\n  \"batchNoOfClasses\": {{UpdatebatchNoOfClasses}},\r\n  \"batchStatus\": \"{{batchStatus}}\",\r\n  \"programId\": {{programId}},\r\n  \"programName\": \"{{programName}}\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/batches/{{batchId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Update a Batch with Batch Name by valid Batch ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "81c8ab57-f4fb-487a-b675-e7e50f1f607e",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"const jsonData=JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"batchName\", jsonData.batchName)\r",
+									"pm.collectionVariables.set(\"batchDescription\", jsonData.batchDescription);\r",
+									"pm.collectionVariables.set(\"batchNoOfClasses\", jsonData.batchNoOfClasses);\r",
+									"pm.collectionVariables.set(\"batchStatus\", jsonData.batchStatus);\r",
+									"pm.collectionVariables.set(\"programId\", jsonData.programId);\r",
+									"pm.collectionVariables.set(\"programName\", jsonData.programName);\r",
+									"pm.collectionVariables.set(\"batchId\", jsonData.batchId);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "46126b62-3296-46d5-9819-867f2a7bfc24",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"batchDescription\": \"{{batchDescription}}\",\r\n  \"batchId\": {{batchId}},\r\n  \"batchName\": \"{{UpdatebatchName}}\",\r\n  \"batchNoOfClasses\": {{batchNoOfClasses}},\r\n  \"batchStatus\": \"{{batchStatus}}\",\r\n  \"programId\": {{programId}},\r\n  \"programName\": \"{{programName}}\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/batches/{{batchId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Update a Batch with Program name  by BATCH ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "81c8ab57-f4fb-487a-b675-e7e50f1f607e",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"const jsonData=JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"batchName\", jsonData.batchName)\r",
+									"pm.collectionVariables.set(\"batchDescription\", jsonData.batchDescription);\r",
+									"pm.collectionVariables.set(\"batchNoOfClasses\", jsonData.batchNoOfClasses);\r",
+									"pm.collectionVariables.set(\"batchStatus\", jsonData.batchStatus);\r",
+									"pm.collectionVariables.set(\"programId\", jsonData.programId);\r",
+									"//assumption :corresponding program name associated with the programId will be displayed, and will not take any other value.\r",
+									"pm.collectionVariables.set(\"programName\", jsonData.programName);\r",
+									"pm.collectionVariables.set(\"batchId\", jsonData.batchId);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "3693546f-be9c-432f-b516-5a0af6862fff",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"batchDescription\": \"{{batchDescription}}\",\r\n  \"batchId\": {{batchId}},\r\n  \"batchName\": \"{{batchName}}\",\r\n  \"batchNoOfClasses\": {{batchNoOfClasses}},\r\n  \"batchStatus\": \"{{batchStatus}}\",\r\n  \"programId\": {{programId}},\r\n  \"programName\": \"{{UpdateprogramName}}\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/batches/{{batchId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Update a Batch with existing ProgramID by valid BATCH ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "81c8ab57-f4fb-487a-b675-e7e50f1f607e",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"const jsonData=JSON.parse(responseBody);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "62cc7119-5ed5-4d95-827a-bc6fad948fa9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"batchDescription\": \"{{batchDescription}}\",\r\n  \"batchId\": {{batchId}},\r\n  \"batchName\": \"{{batchName}}\",\r\n  \"batchNoOfClasses\": {{batchNoOfClasses}},\r\n  \"batchStatus\": \"{{batchStatus}}\",\r\n  \"programId\": {{programId}},\r\n  \"programName\": \"{{programName}}\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/batches/{{batchId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Update the batch by BatchId  with Inactive ProgramId-Invalid Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "81c8ab57-f4fb-487a-b675-e7e50f1f607e",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"const jsonData=JSON.parse(responseBody);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "ed8d51f1-ffa0-4639-93c3-de51dc548556",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"batchDescription\": \"{{batchDescription}}\",\r\n  \"batchId\": {{batchId}},\r\n  \"batchName\": \"{{batchName}}\",\r\n  \"batchNoOfClasses\": {{batchNoOfClasses}},\r\n  \"batchStatus\": \"{{batchStatus}}\",\r\n  \"programId\": {{InActiveProgramId}},\r\n  \"programName\": \"{{programName}}\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/batches/{{batchId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Batch Status with invalid status value by batchId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "81c8ab57-f4fb-487a-b675-e7e50f1f607e",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"const jsonData=JSON.parse(responseBody);\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "f95dcaad-319f-4fd6-b619-1f78e98aaa59",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"batchDescription\": \"{{batchDescription}}\",\r\n  \"batchId\": {{batchId}},\r\n  \"batchName\": \"{{batchName}}\",\r\n  \"batchNoOfClasses\": {{batchNoOfClasses}},\r\n  \"batchStatus\": \"{{InvalidBatchStatus}}\",\r\n  \"programId\": {{programId}},\r\n  \"programName\": \"{{programName}}\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BaseUrl}}/batches/{{batchId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Batch Status  by batchId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "81c8ab57-f4fb-487a-b675-e7e50f1f607e",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"const jsonData=JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"batchName\", jsonData.batchName)\r",
+									"pm.collectionVariables.set(\"batchDescription\", jsonData.batchDescription);\r",
+									"pm.collectionVariables.set(\"batchNoOfClasses\", jsonData.batchNoOfClasses);\r",
+									"pm.collectionVariables.set(\"batchStatus\", jsonData.batchStatus);\r",
+									"pm.collectionVariables.set(\"programId\", jsonData.programId);\r",
+									"pm.collectionVariables.set(\"programName\", jsonData.programName);\r",
+									"pm.collectionVariables.set(\"batchId\", jsonData.batchId);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "22c51a08-c4ff-41a4-a160-f6be22fa7b24",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"batchDescription\": \"{{batchDescription}}\",\r\n  \"batchId\": {{batchId}},\r\n  \"batchName\": \"{{batchName}}\",\r\n  \"batchNoOfClasses\": {{batchNoOfClasses}},\r\n  \"batchStatus\": \"{{UpdatebatchStatus}}\",\r\n  \"programId\": {{programId}},\r\n  \"programName\": \"{{programName}}\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BaseUrl}}/batches/{{batchId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Batch status and program name with valid batchId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "81c8ab57-f4fb-487a-b675-e7e50f1f607e",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"const jsonData=JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"batchName\", jsonData.batchName)\r",
+									"pm.collectionVariables.set(\"batchDescription\", jsonData.batchDescription);\r",
+									"pm.collectionVariables.set(\"batchNoOfClasses\", jsonData.batchNoOfClasses);\r",
+									"pm.collectionVariables.set(\"batchStatus\", jsonData.batchStatus);\r",
+									"pm.collectionVariables.set(\"programId\", jsonData.programId);\r",
+									"pm.collectionVariables.set(\"programName\", jsonData.programName);\r",
+									"pm.collectionVariables.set(\"batchId\", jsonData.batchId);\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "8c229e0a-3400-4c6e-ac28-3401ae59625b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"batchDescription\": \"{{batchDescription}}\",\r\n  \"batchId\": {{batchId}},\r\n  \"batchName\": \"{{batchName}}\",\r\n  \"batchNoOfClasses\": {{batchNoOfClasses}},\r\n  \"batchStatus\": \"{{ActivebatchStatus}}\",\r\n  \"programId\": {{programId}},\r\n  \"programName\": \"{{UpdateprogramName}}\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BaseUrl}}/batches/{{batchId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Update batch with non-existing ProgramId -Invalid",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "81c8ab57-f4fb-487a-b675-e7e50f1f607e",
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"const jsonData=JSON.parse(responseBody);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "b47c76c5-bc4e-4d82-90d4-158690cb0604",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"batchDescription\": \"{{batchDescription}}\",\r\n  \"batchId\": {{batchId}},\r\n  \"batchName\": \"{{batchName}}\",\r\n  \"batchNoOfClasses\": {{batchNoOfClasses}},\r\n  \"batchStatus\": \"{{batchStatus}}\",\r\n  \"programId\": {{NonExistProgramId}},\r\n  \"programName\": \"{{programName}}\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/batches/{{batchId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Update BatchId of a batch with the  existing BatchId-Invalid",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "81c8ab57-f4fb-487a-b675-e7e50f1f607e",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"const jsonData=JSON.parse(responseBody);\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "5ca7e28d-ac50-4ab2-abe0-edf6b3f419dd",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"batchDescription\": \"{{batchDescription}}\",\r\n  \"batchId\": {{ExistngBatchId}},\r\n  \"batchName\": \"{{batchName}}\",\r\n  \"batchNoOfClasses\": {{batchNoOfClasses}},\r\n  \"batchStatus\": \"{{batchStatus}}\",\r\n  \"programId\": {{programId}},\r\n  \"programName\": \"{{programName}}\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/batches/{{batchId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Batch description by non existing batchId-invalid",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "81c8ab57-f4fb-487a-b675-e7e50f1f607e",
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"const jsonData=JSON.parse(responseBody);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "f51a9f3b-44e5-4afe-a39e-83567cb28697",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"batchDescription\": \"{{batchDescription}}\",\r\n  \"batchId\": {{nonExistngBatchId}},\r\n  \"batchName\": \"{{batchName}}\",\r\n  \"batchNoOfClasses\": {{batchNoOfClasses}},\r\n  \"batchStatus\": \"{{batchStatus}}\",\r\n  \"programId\": {{programId}},\r\n  \"programName\": \"{{programName}}\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/batches/{{nonExistngBatchId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Batch number of classes  by non existing batchId-invalid",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "81c8ab57-f4fb-487a-b675-e7e50f1f607e",
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"const jsonData=JSON.parse(responseBody);\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "7edd4789-cadb-432d-9b66-34910b5e61d3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"batchDescription\": \"{{batchDescription}}\",\r\n  \"batchId\": {{nonExistngBatchId}},\r\n  \"batchName\": \"{{batchName}}\",\r\n  \"batchNoOfClasses\": {{batchNoOfClasses}},\r\n  \"batchStatus\": \"{{batchStatus}}\",\r\n  \"programId\": {{programId}},\r\n  \"programName\": \"{{programName}}\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/batches/{{nonExistngBatchId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete  a Batch with valid BATCH ID Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "baf894c6-205b-4f95-be0c-8752eb6d6f88",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "8bc1c644-74e7-45f7-a389-53659988c9b2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseUrl}}/batches/{{batchId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Batch by non-existing BatchID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "baf894c6-205b-4f95-be0c-8752eb6d6f88",
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "1ed71526-3976-4842-b66b-6addfdc684d1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseUrl}}/batches/{{nonExistngBatchId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Batch by inactive BatchID -invalid",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "baf894c6-205b-4f95-be0c-8752eb6d6f88",
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "f1f994a3-08c5-4c6c-99a5-c97babae9c53",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseUrl}}/batches/{{InactiveBatchId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "View Batch by Inactive BatchID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "84039679-2f72-47cd-8af9-3c4ab005f7e9",
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "a9b236d1-8cab-4a6e-baf8-411b18a2a37c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/batches/batchId/{{InactiveBatchId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "View Batch by Inactive BatchName",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "84039679-2f72-47cd-8af9-3c4ab005f7e9",
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "6f7c5f0f-e9a9-4d81-af3c-d2f25249d513",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/batches/batchName/{{InActiveBatchName}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Batch descriptions  by inactive batchId -invalid",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "81c8ab57-f4fb-487a-b675-e7e50f1f607e",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"const jsonData=JSON.parse(responseBody);\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "c2bb806d-2d69-453e-9db2-3f4f5b40b289",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"batchDescription\": \"{{batchDescription}}\",\r\n  \"batchId\": {{InactiveBatchId}},\r\n  \"batchName\": \"{{batchName}}\",\r\n  \"batchNoOfClasses\": {{batchNoOfClasses}},\r\n  \"batchStatus\": \"{{batchStatus}}\",\r\n  \"programId\": {{programId}},\r\n  \"programName\": \"{{programName}}\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/batches/{{InactiveBatchId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Batch number of classes  by inactive batchId-invalid",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "81c8ab57-f4fb-487a-b675-e7e50f1f607e",
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"const jsonData=JSON.parse(responseBody);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "c6a13239-d547-46c6-9a97-9e3d090e5707",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"batchDescription\": \"{{batchDescription}}\",\r\n  \"batchId\": {{InactiveBatchId}},\r\n  \"batchName\": \"{{batchName}}\",\r\n  \"batchNoOfClasses\": {{batchNoOfClasses}},\r\n  \"batchStatus\": \"{{batchStatus}}\",\r\n  \"programId\": {{programId}},\r\n  \"programName\": \"{{programName}}\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/batches/{{InactiveBatchId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete  a existing Batch to make  Batch status inactive",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "baf894c6-205b-4f95-be0c-8752eb6d6f88",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "8fe5938d-08fb-4e45-9197-b75ad1e421a0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseUrl}}/batches/{{batchId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Create a new Batch 2 for the given Program",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "cc6a8ab0-0558-4b34-9de9-48ffa869543e",
+								"exec": [
+									"const serialNumber = _.random(30,35)\r",
+									"pm.variables.set(\"serialNumber\", serialNumber )\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "f7ca5984-998d-4e0f-85cf-202bfb89c507",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"pm.test(\"Successful POST request\", function () {\r",
+									"      pm.response.to.have.status(201);\r",
+									"});\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201,202]);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"const jsonData=JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"batchName\", jsonData.batchName)\r",
+									" pm.collectionVariables.set(\"batchDescription\", jsonData.batchDescription);\r",
+									" pm.collectionVariables.set(\"batchNoOfClasses\", jsonData.batchNoOfClasses);\r",
+									" pm.collectionVariables.set(\"batchStatus\", jsonData.batchStatus);\r",
+									"pm.collectionVariables.set(\"programId\", jsonData.programId);\r",
+									"pm.collectionVariables.set(\"batchId\", jsonData.batchId);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "1444eb7e-512d-4f0e-a20c-17a6fb994391",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"batchDescription\": \"{{batchDescriptionExcel}}\",\r\n  \"batchName\": \"{{batchNameExcel}}\",\r\n  \"batchNoOfClasses\": {{batchNoOfClassesExcel}},\r\n  \"batchStatus\": \"{{batchStatusExcel}}\",\r\n  \"programId\": {{programId}}\r\n }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/batches"
+					},
+					"response": []
+				}
+			],
+			"id": "b307cf09-51e5-4d84-8b31-e145cd00aa02"
+		}
+	]
 }
