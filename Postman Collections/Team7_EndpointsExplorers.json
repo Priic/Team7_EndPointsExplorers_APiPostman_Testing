@@ -88,7 +88,7 @@
 							"script": {
 								"id": "995f6718-9c16-4153-8758-428da33c1c5a",
 								"exec": [
-									" pm.test(\"Status code is 400 :Bad request : password are mandatory\", function () {\r",
+									" pm.test(\"Status code is 400 :Bad request : Email is mandatory\", function () {\r",
 									"    pm.expect(pm.response.code).to.eql(400);\r",
 									"    });"
 								],
@@ -124,7 +124,7 @@
 							"script": {
 								"id": "18c4de37-d82a-4f9a-8ec6-5702cddb9da6",
 								"exec": [
-									" pm.test(\"Status code is 400 :Bad request : passwrod is mandatory\", function () {\r",
+									" pm.test(\"Status code is 400 :Bad request : password is mandatory\", function () {\r",
 									"    pm.expect(pm.response.code).to.eql(400);\r",
 									"    });"
 								],
@@ -160,7 +160,7 @@
 							"script": {
 								"id": "fdb9ad2b-f71e-4aed-a197-d91dfa90d378",
 								"exec": [
-									"    pm.test(\"Status code is 400 :Bad request : Email and password mandatory\", function () {\r",
+									"    pm.test(\"Status code is 400 :Bad request : Email and password are mandatory\", function () {\r",
 									"    pm.expect(pm.response.code).to.eql(400);\r",
 									"    });"
 								],
@@ -655,7 +655,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{baseUrl}}/getProgramByProgramId/{{programId}}"
+						"url": "{{baseUrl}}/programs/{{programId}}"
 					},
 					"response": []
 				},
@@ -688,7 +688,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{baseUrl}}/getProgramByProgramId/{{NonExistProgramId}}"
+						"url": "{{baseUrl}}/programs/{{NonExistProgramId}}"
 					},
 					"response": []
 				},
@@ -1449,7 +1449,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{baseUrl}}/getProgramByProgramId/{{programId}}"
+						"url": "{{baseUrl}}/programs/{{programId}}"
 					},
 					"response": []
 				}
