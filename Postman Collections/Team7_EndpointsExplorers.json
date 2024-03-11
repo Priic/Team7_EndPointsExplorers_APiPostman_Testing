@@ -10565,5 +10565,67 @@
 			],
 			"id": "c369c220-a523-4065-a9a9-96090966ef86"
 		}
+	],
+	"variable": [
+		{
+			"key": "BearerToken",
+			"value": ""
+		},
+		{
+			"key": "programName",
+			"value": ""
+		},
+		{
+			"key": "programDescription",
+			"value": ""
+		},
+		{
+			"key": "programStatus",
+			"value": ""
+		},
+		{
+			"key": "programId",
+			"value": ""
+		},
+		{
+			"key": "creationTime",
+			"value": ""
+		},
+		{
+			"key": "lastModTime",
+			"value": ""
+		},
+		{
+			"key": "InActiveProgramId",
+			"value": ""
+		},
+		{
+			"key": "batchName",
+			"value": ""
+		},
+		{
+			"key": "batchDescription",
+			"value": ""
+		},
+		{
+			"key": "batchNoOfClasses",
+			"value": ""
+		},
+		{
+			"key": "batchStatus",
+			"value": ""
+		},
+		{
+			"key": "batchId",
+			"value": ""
+		},
+		{
+			"key": "InactiveBatchId",
+			"value": ""
+		},
+		{
+			"key": "InActiveBatchName",
+			"value": ""
+		}
 	]
 }
