@@ -2298,7 +2298,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{BaseUrl}}/batches/batchName/{{NonExistngBatchName}}"
+						"url": "{{baseUrl}}/batches/batchName/{{NonExistngBatchName}}"
 					},
 					"response": []
 				},
@@ -10626,6 +10626,10 @@
 		{
 			"key": "InActiveBatchName",
 			"value": ""
+		},
+		{
+			"key": "baseUrl",
+			"value": "https://lms-marchapi-hackathon-a258d2bbd43b.herokuapp.com/lms"
 		}
 	]
 }
