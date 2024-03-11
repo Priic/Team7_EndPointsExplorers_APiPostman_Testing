@@ -10531,7 +10531,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{BaseUrl}}/logoutlms"
+						"url": "{{baseUrl}}/logoutlms"
 					},
 					"response": []
 				},
@@ -10660,6 +10660,46 @@
 			"key": "nonExistngBatchId",
 			"value": "123456676",
 			"type": "string"
+		},
+		{
+			"key": "PhoneNumber",
+			"value": ""
+		},
+		{
+			"key": "email",
+			"value": ""
+		},
+		{
+			"key": "Invalidemail",
+			"value": ""
+		},
+		{
+			"key": "adminuserId",
+			"value": ""
+		},
+		{
+			"key": "existingphone",
+			"value": ""
+		},
+		{
+			"key": "userIdforInvalid",
+			"value": ""
+		},
+		{
+			"key": "staffuserId",
+			"value": ""
+		},
+		{
+			"key": "existingmail",
+			"value": ""
+		},
+		{
+			"key": "studentuserId",
+			"value": ""
+		},
+		{
+			"key": "visaStatus",
+			"value": ""
 		}
 	]
 }
