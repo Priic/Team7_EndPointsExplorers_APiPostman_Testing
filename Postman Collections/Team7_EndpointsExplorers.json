@@ -718,7 +718,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{baseUrl}}/{{getAllProgramsWithUsers}}"
+						"url": "{{baseUrl}}/allProgramsWithUsers"
 					},
 					"response": []
 				},
@@ -1446,7 +1446,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{baseUrl}}/{{getProgramByProgramId}}/{{programId}}"
+						"url": "{{baseUrl}}/getProgramByProgramId/{{programId}}"
 					},
 					"response": []
 				}
