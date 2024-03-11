@@ -2636,7 +2636,7 @@
 					"response": []
 				},
 				{
-					"name": "Update the batch by BatchId  with Inactive ProgramId-Invalid Copy",
+					"name": "Update the batch by BatchId  with Inactive ProgramId-Invalid",
 					"event": [
 						{
 							"listen": "test",
@@ -10569,6 +10569,28 @@
 			"id": "c369c220-a523-4065-a9a9-96090966ef86"
 		}
 	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "02fde911-58a9-4f9d-b830-ef5e5adccdc8",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "43095d75-361e-4cfe-93f0-6d8b3beae302",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
 	"variable": [
 		{
 			"key": "BearerToken",
@@ -10633,6 +10655,11 @@
 		{
 			"key": "baseUrl",
 			"value": "https://lms-marchapi-hackathon-a258d2bbd43b.herokuapp.com/lms"
+		},
+		{
+			"key": "nonExistngBatchId",
+			"value": "123456676",
+			"type": "string"
 		}
 	]
 }
