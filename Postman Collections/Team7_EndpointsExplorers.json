@@ -81,6 +81,42 @@
 					"response": []
 				},
 				{
+					"name": "InvalidEmail and InvalidPassword",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "12fc8dd8-0a31-477b-873c-567e18797f00",
+								"exec": [
+									"pm.test(\"Status code is 401 : Invalid Email Id and Invalid Password\", function () {\r",
+									"    pm.expect(pm.response.code).to.eql(401);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "b49af63b-9081-434e-a57d-aaee23cb454d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"password\": \"{{Invalidpassword}}\",\r\n  \"userLoginEmailId\": \"{{InvaliduserLoginEmailId}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/login"
+					},
+					"response": []
+				},
+				{
 					"name": "Blank Email Login",
 					"event": [
 						{
