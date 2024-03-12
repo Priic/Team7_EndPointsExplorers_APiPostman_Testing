@@ -1265,7 +1265,7 @@
 							"script": {
 								"id": "7c0f246b-1807-4004-a33c-b9941aeb07a1",
 								"exec": [
-									"const serialNumber = _.random(80,70)",
+									"const serialNumber = _.random(150,200)",
 									"pm.variables.set(\"serialNumber\", serialNumber )"
 								],
 								"type": "text/javascript"
@@ -4684,7 +4684,7 @@
 									"    pm.response.to.have.status(201);",
 									"});",
 									"var jsonResponse = pm.response.json();",
-									"m.test(\"Schema is valid\", function () {",
+									"pm.test(\"Schema is valid\", function () {",
 									"    const schema = {",
 									"        \"type\": \"object\",",
 									"        \"properties\": {",
@@ -7322,7 +7322,7 @@
 									"    pm.response.to.have.status(201);",
 									"});",
 									"var jsonResponse = pm.response.json();",
-									"m.test(\"Schema is valid\", function () {",
+									"pm.test(\"Schema is valid\", function () {",
 									"    const schema = {",
 									"        \"type\": \"object\",",
 									"        \"properties\": {",
