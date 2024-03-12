@@ -10635,6 +10635,36 @@
 					"response": []
 				},
 				{
+					"name": "GetAllUserAssignProgramBatchNoAuth",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "87efdca2-ea17-4f71-ae79-e2f9046ffc1d",
+								"exec": [
+									"pm.test(\"UnAuthorized 401\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "5c3abc8d-6b0c-4fa0-bdaf-b311493a9c0d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/userRoleProgramBatchMap"
+					},
+					"response": []
+				},
+				{
 					"name": "InvalidUserIdDeleteUser",
 					"event": [
 						{
@@ -10973,13 +11003,61 @@
 				},
 				{
 					"name": "DeleteAssignUserProgramBatchNoauth",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ba061ebe-6024-43dc-9569-6ea64dd1edb8",
+								"exec": [
+									"pm.test(\"UnAuthorized 401\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "14d0c0c4-0f5b-45a8-a6f5-c2f493aa9ef2",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseUrl}}/userRoleProgramBatchMap//{{adminuserId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "GetUserAssignProgramBatchNoAuth",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "398fbef4-fcda-414c-86ec-485c693a081b",
+								"exec": [
+									"pm.test(\"UnAuthorized 401\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "b33744c5-fd75-488f-818d-c8e400ffc8de",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": "{{baseUrl}}/userRoleProgramBatchMap/{{adminuserId}}"
 					},
 					"response": []
 				}
