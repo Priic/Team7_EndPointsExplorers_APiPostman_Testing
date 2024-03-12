@@ -10390,6 +10390,18 @@
 					"response": []
 				},
 				{
+					"name": "New Request",
+					"id": "347809a5-63dd-4f78-bab8-0aab03518f45",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
 					"name": "User Information By User Id after all assigned program and batch is deleted",
 					"event": [
 						{
