@@ -9346,6 +9346,37 @@
 					"response": []
 				},
 				{
+					"name": "DeleteUserAssignProgramBatchUsingInvalidUserId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e53305ae-6f4d-4cec-9019-a5b83016dca5",
+								"exec": [
+									"pm.test(\"Status code is 404: Not Found Invalid UserId\", function () {\r",
+									"    pm.expect(pm.response.code).to.eql(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "a1297937-99ed-4894-8674-f71111cc3f0f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseUrl}}/userRoleProgramBatchMap/{{InvaliduserId}}"
+					},
+					"response": []
+				},
+				{
 					"name": "UpdateUserRoleID",
 					"event": [
 						{
@@ -9558,7 +9589,7 @@
 							"script": {
 								"id": "0e367a9d-4c4e-407b-8195-12992b73f762",
 								"exec": [
-									"pm.test(\"Bug : Status code is 404: Not Found UnAssign UserId\", function () {\r",
+									"pm.test(\"Status code is 404: Not Found UnAssign UserId\", function () {\r",
 									"    pm.expect(pm.response.code).to.eql(404);\r",
 									"});"
 								],
@@ -10937,18 +10968,6 @@
 						"method": "GET",
 						"header": [],
 						"url": "{{baseUrl}}/{{getProgramByProgramId}}/{{programId}}"
-					},
-					"response": []
-				},
-				{
-					"name": "DeleteUserAssignProgramBatchUsingInvalidUserId",
-					"id": "a1297937-99ed-4894-8674-f71111cc3f0f",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": []
 					},
 					"response": []
 				}
