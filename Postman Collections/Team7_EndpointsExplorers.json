@@ -3329,8 +3329,8 @@
 							"script": {
 								"id": "81c8ab57-f4fb-487a-b675-e7e50f1f607e",
 								"exec": [
-									"pm.test(\"Status code is 404\", function () {\r",
-									"    pm.response.to.have.status(404);\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
 									"});\r",
 									"\r",
 									"pm.test(\"Response time is less than 200ms\", function () {\r",
