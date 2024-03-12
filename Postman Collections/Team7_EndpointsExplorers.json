@@ -10732,14 +10732,35 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "GetUnAssignUserIDFromProgramBatch",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "01f7d3f2-8f6f-472c-9515-c5a19b61f552",
+								"exec": [
+									"pm.test(\"Status code is 404:UserId Not Found\", function () {\r",
+									"    pm.expect(pm.response.code).to.eql(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "54275567-73f0-4093-9dde-0a083212e8bb",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": "{{baseUrl}}/userRoleProgramBatchMap/{{adminuserId}}"
 					},
 					"response": []
 				},
