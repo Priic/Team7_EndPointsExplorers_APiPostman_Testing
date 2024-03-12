@@ -11091,6 +11091,18 @@
 						"url": "{{baseUrl}}/userRoleProgramBatchMap/{{adminuserId}}"
 					},
 					"response": []
+				},
+				{
+					"name": "GetUserAssignProgramBatchByInactiveUserID",
+					"id": "60426d04-f14d-48a6-9458-d2526b1ec317",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
 			],
 			"id": "5b6900fa-43bb-4672-b6fb-ff2f0d5090e9"
