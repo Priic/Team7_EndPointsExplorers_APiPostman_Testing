@@ -10906,6 +10906,39 @@
 						"url": "{{baseUrl}}/{{getProgramByProgramId}}/{{programId}}"
 					},
 					"response": []
+				},
+				{
+					"name": "DeleteUserAssignProgramBatchUsingUnAssignUser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0e367a9d-4c4e-407b-8195-12992b73f762",
+								"exec": [
+									"pm.test(\"Bug : Status code is 404: Not Found UnAssign UserId\", function () {\r",
+									"    pm.expect(pm.response.code).to.eql(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "5bb118a3-7199-4e43-87c5-20a29ec82eb4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseUrl}}/userRoleProgramBatchMap/deleteAll/{{adminuserId}}"
+					},
+					"response": []
 				}
 			],
 			"id": "5b6900fa-43bb-4672-b6fb-ff2f0d5090e9"
