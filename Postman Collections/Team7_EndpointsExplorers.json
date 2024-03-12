@@ -9551,6 +9551,39 @@
 					"response": []
 				},
 				{
+					"name": "DeleteUserAssignProgramBatchUsingUnAssignUser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0e367a9d-4c4e-407b-8195-12992b73f762",
+								"exec": [
+									"pm.test(\"Bug : Status code is 404: Not Found UnAssign UserId\", function () {\r",
+									"    pm.expect(pm.response.code).to.eql(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "5bb118a3-7199-4e43-87c5-20a29ec82eb4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseUrl}}/userRoleProgramBatchMap/deleteAll/{{adminuserId}}"
+					},
+					"response": []
+				},
+				{
 					"name": "InvalidRoleIdAssignUpdateUserRoleProgramBatchStatus",
 					"event": [
 						{
@@ -10908,35 +10941,14 @@
 					"response": []
 				},
 				{
-					"name": "DeleteUserAssignProgramBatchUsingUnAssignUser",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "0e367a9d-4c4e-407b-8195-12992b73f762",
-								"exec": [
-									"pm.test(\"Bug : Status code is 404: Not Found UnAssign UserId\", function () {\r",
-									"    pm.expect(pm.response.code).to.eql(404);\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "5bb118a3-7199-4e43-87c5-20a29ec82eb4",
+					"name": "DeleteUserAssignProgramBatchUsingInvalidUserId",
+					"id": "a1297937-99ed-4894-8674-f71111cc3f0f",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{BearerToken}}"
-							}
-						},
-						"method": "DELETE",
-						"header": [],
-						"url": "{{baseUrl}}/userRoleProgramBatchMap/deleteAll/{{adminuserId}}"
+						"method": "GET",
+						"header": []
 					},
 					"response": []
 				}
