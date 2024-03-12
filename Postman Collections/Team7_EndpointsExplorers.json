@@ -4677,9 +4677,36 @@
 									"const responseJson = pm.response.json();",
 									"console.log(responseJson);",
 									"",
+									"",
 									"pm.test(\"Status code is 201 Created\", function () {",
 									"    pm.response.to.have.status(201);",
 									"});",
+									"m.test(\"Schema is valid\", function () {",
+									"    const schema = {",
+									"        \"type\": \"object\",",
+									"        \"properties\": {",
+									"            \"userComments\": { \"type\": \"string\" },",
+									"            \"userEduPg\": { \"type\": \"string\" },",
+									"            \"userEduUg\": { \"type\": \"string\" },",
+									"            \"userFirstName\": { \"type\": \"string\" },",
+									"            \"userId\": { \"type\": \"string\" },",
+									"            \"userLastName\": { \"type\": \"string\" },",
+									"            \"userLinkedinUrl\": { \"type\": \"string\" },",
+									"            \"userLocation\": { \"type\": \"string\" },",
+									"            \"userMiddleName\": { \"type\": \"string\" },",
+									"            \"userPhoneNumber\": { \"type\": [\"number\", \"null\"] }, // Allow number or null",
+									"            \"userTimeZone\": { \"type\": \"string\" },",
+									"            \"userVisaStatus\": { \"type\": [\"string\", \"null\"] } // Allow string or null",
+									"        },",
+									"        \"required\": [\"userComments\", \"userEduPg\", \"userEduUg\", ",
+									"                     \"userFirstName\", \t\"userId\", \t\"userLastName\", ",
+									"                    \t\"userLinkedinUrl\", \t\"userLocation\", \t\"userMiddleName\",",
+									"                    \t\"userPhoneNumber\", \t\"userTimeZone\", \t\"userVisaStatus\"]",
+									"    };",
+									"",
+									"    pm.response.to.have.jsonSchema(schema);",
+									"});",
+									"",
 									"",
 									"",
 									"",
@@ -6025,7 +6052,33 @@
 									"",
 									"pm.test(\"Status code is 201\", function () {",
 									"    pm.response.to.have.status(201);",
-									"});"
+									"});",
+									"m.test(\"Schema is valid\", function () {",
+									"    const schema = {",
+									"        \"type\": \"object\",",
+									"        \"properties\": {",
+									"            \"userComments\": { \"type\": \"string\" },",
+									"            \"userEduPg\": { \"type\": \"string\" },",
+									"            \"userEduUg\": { \"type\": \"string\" },",
+									"            \"userFirstName\": { \"type\": \"string\" },",
+									"            \"userId\": { \"type\": \"string\" },",
+									"            \"userLastName\": { \"type\": \"string\" },",
+									"            \"userLinkedinUrl\": { \"type\": \"string\" },",
+									"            \"userLocation\": { \"type\": \"string\" },",
+									"            \"userMiddleName\": { \"type\": \"string\" },",
+									"            \"userPhoneNumber\": { \"type\": [\"number\", \"null\"] }, // Allow number or null",
+									"            \"userTimeZone\": { \"type\": \"string\" },",
+									"            \"userVisaStatus\": { \"type\": [\"string\", \"null\"] } // Allow string or null",
+									"        },",
+									"        \"required\": [\"userComments\", \"userEduPg\", \"userEduUg\", ",
+									"                     \"userFirstName\", \t\"userId\", \t\"userLastName\", ",
+									"                    \t\"userLinkedinUrl\", \t\"userLocation\", \t\"userMiddleName\",",
+									"                    \t\"userPhoneNumber\", \t\"userTimeZone\", \t\"userVisaStatus\"]",
+									"    };",
+									"",
+									"    pm.response.to.have.jsonSchema(schema);",
+									"});",
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -7263,7 +7316,33 @@
 									"",
 									"pm.test(\"Status code is 201\", function () {",
 									"    pm.response.to.have.status(201);",
-									"});"
+									"});",
+									"m.test(\"Schema is valid\", function () {",
+									"    const schema = {",
+									"        \"type\": \"object\",",
+									"        \"properties\": {",
+									"            \"userComments\": { \"type\": \"string\" },",
+									"            \"userEduPg\": { \"type\": \"string\" },",
+									"            \"userEduUg\": { \"type\": \"string\" },",
+									"            \"userFirstName\": { \"type\": \"string\" },",
+									"            \"userId\": { \"type\": \"string\" },",
+									"            \"userLastName\": { \"type\": \"string\" },",
+									"            \"userLinkedinUrl\": { \"type\": \"string\" },",
+									"            \"userLocation\": { \"type\": \"string\" },",
+									"            \"userMiddleName\": { \"type\": \"string\" },",
+									"            \"userPhoneNumber\": { \"type\": [\"number\", \"null\"] }, // Allow number or null",
+									"            \"userTimeZone\": { \"type\": \"string\" },",
+									"            \"userVisaStatus\": { \"type\": [\"string\", \"null\"] } // Allow string or null",
+									"        },",
+									"        \"required\": [\"userComments\", \"userEduPg\", \"userEduUg\", ",
+									"                     \"userFirstName\", \t\"userId\", \t\"userLastName\", ",
+									"                    \t\"userLinkedinUrl\", \t\"userLocation\", \t\"userMiddleName\",",
+									"                    \t\"userPhoneNumber\", \t\"userTimeZone\", \t\"userVisaStatus\"]",
+									"    };",
+									"",
+									"    pm.response.to.have.jsonSchema(schema);",
+									"});",
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -8764,6 +8843,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
+								"id": "19a05df2-2a3c-4568-b10f-8256414d20ee",
 								"exec": [
 									"",
 									"var PhoneNumber= _.random(2010101010,2313131313);",
@@ -8775,20 +8855,45 @@
 									"var visaStatus=\"H4-EAD\";",
 									"pm.collectionVariables.set(\"visaStatus\", visaStatus);"
 								],
-								"type": "text/javascript",
-								"id": "19a05df2-2a3c-4568-b10f-8256414d20ee"
+								"type": "text/javascript"
 							}
 						},
 						{
 							"listen": "test",
 							"script": {
+								"id": "b5c045e5-5d8d-4a58-8e56-94791aff6670",
 								"exec": [
 									"pm.test(\"Status code is 200 OK\", function () {",
 									"    pm.response.to.have.status(200);",
-									"});"
+									"});",
+									"m.test(\"Schema is valid\", function () {",
+									"    const schema = {",
+									"        \"type\": \"object\",",
+									"        \"properties\": {",
+									"            \"userComments\": { \"type\": \"string\" },",
+									"            \"userEduPg\": { \"type\": \"string\" },",
+									"            \"userEduUg\": { \"type\": \"string\" },",
+									"            \"userFirstName\": { \"type\": \"string\" },",
+									"            \"userId\": { \"type\": \"string\" },",
+									"            \"userLastName\": { \"type\": \"string\" },",
+									"            \"userLinkedinUrl\": { \"type\": \"string\" },",
+									"            \"userLocation\": { \"type\": \"string\" },",
+									"            \"userMiddleName\": { \"type\": \"string\" },",
+									"            \"userPhoneNumber\": { \"type\": [\"number\", \"null\"] }, // Allow number or null",
+									"            \"userTimeZone\": { \"type\": \"string\" },",
+									"            \"userVisaStatus\": { \"type\": [\"string\", \"null\"] } // Allow string or null",
+									"        },",
+									"        \"required\": [\"userComments\", \"userEduPg\", \"userEduUg\", ",
+									"                     \"userFirstName\", \t\"userId\", \t\"userLastName\", ",
+									"                    \t\"userLinkedinUrl\", \t\"userLocation\", \t\"userMiddleName\",",
+									"                    \t\"userPhoneNumber\", \t\"userTimeZone\", \t\"userVisaStatus\"]",
+									"    };",
+									"",
+									"    pm.response.to.have.jsonSchema(schema);",
+									"});",
+									""
 								],
-								"type": "text/javascript",
-								"id": "b5c045e5-5d8d-4a58-8e56-94791aff6670"
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -9204,13 +9309,39 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "dabe87ae-d6f8-48a4-bdb1-a6b69766c18f",
 								"exec": [
 									"pm.test(\"Status code is 200 OK\", function () {",
 									"    pm.response.to.have.status(200);",
-									"});"
+									"});",
+									"m.test(\"Schema is valid\", function () {",
+									"    const schema = {",
+									"        \"type\": \"object\",",
+									"        \"properties\": {",
+									"            \"userComments\": { \"type\": \"string\" },",
+									"            \"userEduPg\": { \"type\": \"string\" },",
+									"            \"userEduUg\": { \"type\": \"string\" },",
+									"            \"userFirstName\": { \"type\": \"string\" },",
+									"            \"userId\": { \"type\": \"string\" },",
+									"            \"userLastName\": { \"type\": \"string\" },",
+									"            \"userLinkedinUrl\": { \"type\": \"string\" },",
+									"            \"userLocation\": { \"type\": \"string\" },",
+									"            \"userMiddleName\": { \"type\": \"string\" },",
+									"            \"userPhoneNumber\": { \"type\": [\"number\", \"null\"] }, // Allow number or null",
+									"            \"userTimeZone\": { \"type\": \"string\" },",
+									"            \"userVisaStatus\": { \"type\": [\"string\", \"null\"] } // Allow string or null",
+									"        },",
+									"        \"required\": [\"userComments\", \"userEduPg\", \"userEduUg\", ",
+									"                     \"userFirstName\", \t\"userId\", \t\"userLastName\", ",
+									"                    \t\"userLinkedinUrl\", \t\"userLocation\", \t\"userMiddleName\",",
+									"                    \t\"userPhoneNumber\", \t\"userTimeZone\", \t\"userVisaStatus\"]",
+									"    };",
+									"",
+									"    pm.response.to.have.jsonSchema(schema);",
+									"});",
+									""
 								],
-								"type": "text/javascript",
-								"id": "dabe87ae-d6f8-48a4-bdb1-a6b69766c18f"
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -10171,24 +10302,50 @@
 						{
 							"listen": "prerequest",
 							"script": {
+								"id": "42764310-f45d-41db-8780-c19647ba2bcc",
 								"exec": [
 									"var email = \"admin\" + pm.variables.replaceIn(\"{{$timestamp}}\")+\"@gmail.com\";",
 									"pm.environment.set(\"email\",email);"
 								],
-								"type": "text/javascript",
-								"id": "42764310-f45d-41db-8780-c19647ba2bcc"
+								"type": "text/javascript"
 							}
 						},
 						{
 							"listen": "test",
 							"script": {
+								"id": "cfbb8aa1-8155-42ee-8b9d-2eaf7e294540",
 								"exec": [
 									"pm.test(\"Status code is 200 OK\", function () {",
 									"    pm.response.to.have.status(200);",
-									"});"
+									"});",
+									"m.test(\"Schema is valid\", function () {",
+									"    const schema = {",
+									"        \"type\": \"object\",",
+									"        \"properties\": {",
+									"            \"userComments\": { \"type\": \"string\" },",
+									"            \"userEduPg\": { \"type\": \"string\" },",
+									"            \"userEduUg\": { \"type\": \"string\" },",
+									"            \"userFirstName\": { \"type\": \"string\" },",
+									"            \"userId\": { \"type\": \"string\" },",
+									"            \"userLastName\": { \"type\": \"string\" },",
+									"            \"userLinkedinUrl\": { \"type\": \"string\" },",
+									"            \"userLocation\": { \"type\": \"string\" },",
+									"            \"userMiddleName\": { \"type\": \"string\" },",
+									"            \"userPhoneNumber\": { \"type\": [\"number\", \"null\"] }, // Allow number or null",
+									"            \"userTimeZone\": { \"type\": \"string\" },",
+									"            \"userVisaStatus\": { \"type\": [\"string\", \"null\"] } // Allow string or null",
+									"        },",
+									"        \"required\": [\"userComments\", \"userEduPg\", \"userEduUg\", ",
+									"                     \"userFirstName\", \t\"userId\", \t\"userLastName\", ",
+									"                    \t\"userLinkedinUrl\", \t\"userLocation\", \t\"userMiddleName\",",
+									"                    \t\"userPhoneNumber\", \t\"userTimeZone\", \t\"userVisaStatus\"]",
+									"    };",
+									"",
+									"    pm.response.to.have.jsonSchema(schema);",
+									"});",
+									""
 								],
-								"type": "text/javascript",
-								"id": "cfbb8aa1-8155-42ee-8b9d-2eaf7e294540"
+								"type": "text/javascript"
 							}
 						}
 					],
