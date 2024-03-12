@@ -10970,6 +10970,18 @@
 						"url": "{{baseUrl}}/{{getProgramByProgramId}}/{{programId}}"
 					},
 					"response": []
+				},
+				{
+					"name": "DeleteAssignUserProgramBatchNoauth",
+					"id": "14d0c0c4-0f5b-45a8-a6f5-c2f493aa9ef2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
 			],
 			"id": "5b6900fa-43bb-4672-b6fb-ff2f0d5090e9"
