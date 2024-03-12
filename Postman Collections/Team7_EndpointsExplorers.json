@@ -9748,6 +9748,39 @@
 					"response": []
 				},
 				{
+					"name": "unassign UserId in program/batch",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5416fd1f-a08a-44dc-bcb5-85d017caf732",
+								"exec": [
+									"pm.test(\"Status code is 404: Not Found UnAssigned UserId\", function () {\r",
+									"    pm.expect(pm.response.code).to.eql(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "0986c0b9-3485-4b3f-9121-65ccdec80f50",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzZGV0b3JnYW5pemVyc0BnbWFpbC5jb20iLCJpYXQiOjE3MTAxOTAxOTAsImV4cCI6MTcxMDIxODk5MH0.L23bO4sGIltu8ijYA9fFihnTePnp6-B8ww3cf-JzCj_N1oANz1AjlHX4APNJ7pOySbKhaNuTWoipud2RRRVGdg"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/userRoleProgramBatchMap/{{adminuserId}}"
+					},
+					"response": []
+				},
+				{
 					"name": "AssignUpdateUserRoleProgramBatchStatus",
 					"event": [
 						{
@@ -9864,24 +9897,10 @@
 								"id": "10e8070e-a737-40d6-a5a8-7bd34d1c1533",
 								"exec": [
 									"\r",
-									"i=pm.response.code;\r",
-									"if(i==200){\r",
+									"\r",
 									"    pm.test(\"Status code is 200 :Retrive Successfully\", function () {\r",
 									"     pm.expect(pm.response.code).to.eql(200);\r",
-									"    });}\r",
-									"if(i==400){\r",
-									"    pm.test(\"Status code is 400 :Bad request \", function () {\r",
-									"    pm.expect(pm.response.code).to.eql(400);\r",
-									"    });}\r",
-									"if(i==401){\r",
-									"pm.test(\"Status code is 401 : Bad credentials\", function () {\r",
-									"    pm.expect(pm.response.code).to.eql(401);\r",
-									"});}\r",
-									"if(i==404){\r",
-									"pm.test(\"Status code is 404: Not Found\", function () {\r",
-									"    pm.expect(pm.response.code).to.eql(404);\r",
-									"});}\r",
-									""
+									"    });"
 								],
 								"type": "text/javascript"
 							}
