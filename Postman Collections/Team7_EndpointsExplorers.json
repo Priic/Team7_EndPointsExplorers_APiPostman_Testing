@@ -10911,11 +10911,17 @@
 			"id": "c369c220-a523-4065-a9a9-96090966ef86"
 		}
 	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "{{BearerToken}}"
+		}
+	},
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "02fde911-58a9-4f9d-b830-ef5e5adccdc8",
+				"id": "8005ac4f-12d0-46cc-8e3c-9fc730a87200",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -10925,7 +10931,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "43095d75-361e-4cfe-93f0-6d8b3beae302",
+				"id": "5d8936a1-469d-4ae8-a59c-6dd9c51ede84",
 				"type": "text/javascript",
 				"exec": [
 					""
