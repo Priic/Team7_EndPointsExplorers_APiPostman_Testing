@@ -9377,6 +9377,37 @@
 					"response": []
 				},
 				{
+					"name": "GetUserAssignProgramBatchInvalidUserID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bd1fa098-3360-4de1-9ac4-a9cde9b42dda",
+								"exec": [
+									"pm.test(\"Status code is 404: Not Found Invalid UserId\", function () {\r",
+									"    pm.expect(pm.response.code).to.eql(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "878ea245-09d0-45d9-901c-45e613a0fc7b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/userRoleProgramBatchMap/{{InvaliduserId}}"
+					},
+					"response": []
+				},
+				{
 					"name": "UpdateUserRoleID",
 					"event": [
 						{
@@ -9532,6 +9563,72 @@
 					"response": []
 				},
 				{
+					"name": "DeleteUserAssignProgramBatchUsingUnAssignUser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0e367a9d-4c4e-407b-8195-12992b73f762",
+								"exec": [
+									"pm.test(\"Status code is 404: Not Found UnAssign UserId\", function () {\r",
+									"    pm.expect(pm.response.code).to.eql(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "5bb118a3-7199-4e43-87c5-20a29ec82eb4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseUrl}}/userRoleProgramBatchMap/deleteAll/{{adminuserId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "GetUnAssignUserIDFromProgramBatch",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "01f7d3f2-8f6f-472c-9515-c5a19b61f552",
+								"exec": [
+									"pm.test(\"Status code is 404:UserId Not Found\", function () {\r",
+									"    pm.expect(pm.response.code).to.eql(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "54275567-73f0-4093-9dde-0a083212e8bb",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{BearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/userRoleProgramBatchMap/{{adminuserId}}"
+					},
+					"response": []
+				},
+				{
 					"name": "InvalidAdminRoleIdAssignUpdateUserRoleProgramBatchStatus",
 					"event": [
 						{
@@ -9578,39 +9675,6 @@
 							}
 						},
 						"url": "{{baseUrl}}/users/roleProgramBatchStatus/{{adminuserId}}"
-					},
-					"response": []
-				},
-				{
-					"name": "DeleteUserAssignProgramBatchUsingUnAssignUser",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "0e367a9d-4c4e-407b-8195-12992b73f762",
-								"exec": [
-									"pm.test(\"Status code is 404: Not Found UnAssign UserId\", function () {\r",
-									"    pm.expect(pm.response.code).to.eql(404);\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "5bb118a3-7199-4e43-87c5-20a29ec82eb4",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{BearerToken}}"
-							}
-						},
-						"method": "DELETE",
-						"header": [],
-						"url": "{{baseUrl}}/userRoleProgramBatchMap/deleteAll/{{adminuserId}}"
 					},
 					"response": []
 				},
@@ -10605,36 +10669,6 @@
 					"response": []
 				},
 				{
-					"name": "NoAuthDeleteUser",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"UnAuthorized 401\", function () {",
-									"    pm.response.to.have.status(401);",
-									"});"
-								],
-								"type": "text/javascript",
-								"id": "5b2cd59d-570b-426e-b59f-83acd073a314"
-							}
-						}
-					],
-					"id": "fc4dfd45-34ed-4492-9726-dde52c0a3614",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "DELETE",
-						"header": [],
-						"url": "{{baseUrl}}/users/{{adminuserId}}"
-					},
-					"response": []
-				},
-				{
 					"name": "GetAllUserAssignProgramBatchNoAuth",
 					"event": [
 						{
@@ -10661,6 +10695,36 @@
 						"method": "GET",
 						"header": [],
 						"url": "{{baseUrl}}/userRoleProgramBatchMap"
+					},
+					"response": []
+				},
+				{
+					"name": "NoAuthDeleteUser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"UnAuthorized 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript",
+								"id": "5b2cd59d-570b-426e-b59f-83acd073a314"
+							}
+						}
+					],
+					"id": "fc4dfd45-34ed-4492-9726-dde52c0a3614",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseUrl}}/users/{{adminuserId}}"
 					},
 					"response": []
 				},
@@ -10828,6 +10892,36 @@
 					"response": []
 				},
 				{
+					"name": "DeleteAssignUserProgramBatchNoauth",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ba061ebe-6024-43dc-9569-6ea64dd1edb8",
+								"exec": [
+									"pm.test(\"UnAuthorized 401\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "14d0c0c4-0f5b-45a8-a6f5-c2f493aa9ef2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseUrl}}/userRoleProgramBatchMap//{{adminuserId}}"
+					},
+					"response": []
+				},
+				{
 					"name": "DeleteUserAssignprogramBatch using inactive/delete User Id",
 					"event": [
 						{
@@ -10858,39 +10952,6 @@
 						"method": "DELETE",
 						"header": [],
 						"url": "{{baseUrl}}/userRoleProgramBatchMap/deleteAll/{{adminuserId}}"
-					},
-					"response": []
-				},
-				{
-					"name": "GetUnAssignUserIDFromProgramBatch",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "01f7d3f2-8f6f-472c-9515-c5a19b61f552",
-								"exec": [
-									"pm.test(\"Status code is 404:UserId Not Found\", function () {\r",
-									"    pm.expect(pm.response.code).to.eql(404);\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "54275567-73f0-4093-9dde-0a083212e8bb",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{BearerToken}}"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "{{baseUrl}}/userRoleProgramBatchMap/{{adminuserId}}"
 					},
 					"response": []
 				},
@@ -10998,36 +11059,6 @@
 						"method": "GET",
 						"header": [],
 						"url": "{{baseUrl}}/{{getProgramByProgramId}}/{{programId}}"
-					},
-					"response": []
-				},
-				{
-					"name": "DeleteAssignUserProgramBatchNoauth",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "ba061ebe-6024-43dc-9569-6ea64dd1edb8",
-								"exec": [
-									"pm.test(\"UnAuthorized 401\", function () {\r",
-									"    pm.response.to.have.status(401);\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "14d0c0c4-0f5b-45a8-a6f5-c2f493aa9ef2",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "DELETE",
-						"header": [],
-						"url": "{{baseUrl}}/userRoleProgramBatchMap//{{adminuserId}}"
 					},
 					"response": []
 				},
