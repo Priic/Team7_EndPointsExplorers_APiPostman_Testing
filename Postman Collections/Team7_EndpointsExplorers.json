@@ -9748,7 +9748,7 @@
 					"response": []
 				},
 				{
-					"name": "unassign UserId in program/batch",
+					"name": "unassignUserIdAssignprogram/batch",
 					"event": [
 						{
 							"listen": "test",
@@ -9889,7 +9889,7 @@
 					"response": []
 				},
 				{
-					"name": "GetUserRoleUserId",
+					"name": "GetUserAssignprogramBatch",
 					"event": [
 						{
 							"listen": "test",
@@ -10409,7 +10409,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete all User assign in program batch using inactive/delete User Id",
+					"name": "DeleteUserAssignprogramBatch using inactive/delete User Id",
 					"event": [
 						{
 							"listen": "test",
@@ -10417,7 +10417,7 @@
 								"id": "dfee11cf-82bf-4f31-a984-77bb833a3171",
 								"exec": [
 									"\r",
-									"pm.test(\"Bug : Status code is 404: Not Found InActive User deleted again\", function () {\r",
+									"pm.test(\"Bug : Status code is 404: Not Found InActive User/deleted again\", function () {\r",
 									"    pm.expect(pm.response.code).to.eql(404);\r",
 									"});"
 								],
